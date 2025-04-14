@@ -231,16 +231,298 @@ void QueMesEs(string mes)
 }*/
 
 // 6-Dado un número entero, que se convierta a número romano.
-ANumeroRomano(10);
+ConvertirANumeroRomano(999);
 
-void ANumeroRomano(int numero)
-{   
+void ConvertirANumeroRomano(int numero)
+{
     string numeroString = numero.ToString();
+    char[] simbolos = new char[] { 'I', 'V', 'X', 'L', 'C', 'D', 'M' };
+    int[] valores = new int[] { 1, 5, 10, 50, 100, 500, 1000 };
+    // Separo cada digito del numero 
+    List<char> resultado = new List<char>();
     int longitud = numeroString.Length;
-    if (longitud > 4)
+    if (longitud < 4)
     {
-        //10000
-        int cantDigitos = longitud - 3;
-        Console.WriteLine('M' * longitud - 3);
+        for (int i = 0; i < longitud; i++)
+        {
+            if (longitud == 3 && i == 0)
+            {
+                switch (numeroString[i])
+                {
+                    case '1':
+                        resultado.Add(simbolos[4]);
+                        break;
+                    case '2':
+                        resultado.Add(simbolos[4]);
+                        resultado.Add(simbolos[4]);
+                        break;
+                    case '3':
+                        resultado.Add(simbolos[4]);
+                        resultado.Add(simbolos[4]);
+                        resultado.Add(simbolos[4]);
+                        break;
+                    case '4':
+                        resultado.Add(simbolos[4]);
+                        resultado.Add(simbolos[5]);
+                        break;
+                    case '5':
+                        resultado.Add(simbolos[5]);
+                        break;
+                    case '6':
+                        resultado.Add(simbolos[5]);
+                        resultado.Add(simbolos[4]);
+                        break;
+                    case '7':
+                        resultado.Add(simbolos[5]);
+                        resultado.Add(simbolos[4]);
+                        resultado.Add(simbolos[4]);
+                        break;
+                    case '8':
+                        resultado.Add(simbolos[5]);
+                        resultado.Add(simbolos[4]);
+                        resultado.Add(simbolos[4]);
+                        resultado.Add(simbolos[4]);
+                        break;
+                    case '9':
+                        resultado.Add(simbolos[4]);
+                        resultado.Add(simbolos[6]);
+                        break;
+                }
+
+
+
+            }
+            if (longitud == 3 && i == 1)
+            {
+                switch (numeroString[i])
+                {
+                    case '1':
+                        resultado.Add(simbolos[2]);
+                        break;
+                    case '2':
+                        resultado.Add(simbolos[2]);
+                        resultado.Add(simbolos[2]);
+                        break;
+                    case '3':
+                        resultado.Add(simbolos[2]);
+                        resultado.Add(simbolos[2]);
+                        resultado.Add(simbolos[2]);
+                        break;
+                    case '4':
+                        resultado.Add(simbolos[2]);
+                        resultado.Add(simbolos[3]);
+                        break;
+                    case '5':
+                        resultado.Add(simbolos[3]);
+                        break;
+                    case '6':
+                        resultado.Add(simbolos[3]);
+                        resultado.Add(simbolos[2]);
+                        break;
+                    case '7':
+                        resultado.Add(simbolos[3]);
+                        resultado.Add(simbolos[2]);
+                        resultado.Add(simbolos[2]);
+                        break;
+                    case '8':
+                        resultado.Add(simbolos[3]);
+                        resultado.Add(simbolos[2]);
+                        resultado.Add(simbolos[2]);
+                        resultado.Add(simbolos[2]);
+                        break;
+                    case '9':
+                        resultado.Add(simbolos[2]);
+                        resultado.Add(simbolos[4]);
+                        break;
+                }
+            }
+            if (longitud == 3 && i == 2)
+            {
+                switch (numeroString[i])
+                {
+                    case '1':
+                        resultado.Add(simbolos[0]);
+                        break;
+                    case '2':
+                        resultado.Add(simbolos[0]);
+                        resultado.Add(simbolos[0]);
+                        break;
+                    case '3':
+                        resultado.Add(simbolos[0]);
+                        resultado.Add(simbolos[0]);
+                        resultado.Add(simbolos[0]);
+                        break;
+                    case '4':
+                        resultado.Add(simbolos[0]);
+                        resultado.Add(simbolos[1]);
+                        break;
+                    case '5':
+                        resultado.Add(simbolos[1]);
+                        break;
+                    case '6':
+                        resultado.Add(simbolos[1]);
+                        resultado.Add(simbolos[0]);
+                        break;
+                    case '7':
+                        resultado.Add(simbolos[1]);
+                        resultado.Add(simbolos[0]);
+                        resultado.Add(simbolos[0]);
+                        break;
+                    case '8':
+                        resultado.Add(simbolos[1]);
+                        resultado.Add(simbolos[0]);
+                        resultado.Add(simbolos[0]);
+                        resultado.Add(simbolos[0]);
+                        break;
+                    case '9':
+                        resultado.Add(simbolos[0]);
+                        resultado.Add(simbolos[2]);
+                        break;
+                }
+            }
+            if (longitud == 2 && i == 0)
+            {
+                switch (numeroString[i])
+                {
+                    case '1':
+                        resultado.Add(simbolos[2]);
+                        break;
+                    case '2':
+                        resultado.Add(simbolos[2]);
+                        resultado.Add(simbolos[2]);
+                        break;
+                    case '3':
+                        resultado.Add(simbolos[2]);
+                        resultado.Add(simbolos[2]);
+                        resultado.Add(simbolos[2]);
+                        break;
+                    case '4':
+                        resultado.Add(simbolos[2]);
+                        resultado.Add(simbolos[3]);
+                        break;
+                    case '5':
+                        resultado.Add(simbolos[3]);
+                        break;
+                    case '6':
+                        resultado.Add(simbolos[3]);
+                        resultado.Add(simbolos[2]);
+                        break;
+                    case '7':
+                        resultado.Add(simbolos[3]);
+                        resultado.Add(simbolos[2]);
+                        resultado.Add(simbolos[2]);
+                        break;
+                    case '8':
+                        resultado.Add(simbolos[3]);
+                        resultado.Add(simbolos[2]);
+                        resultado.Add(simbolos[2]);
+                        resultado.Add(simbolos[2]);
+                        break;
+                    case '9':
+                        resultado.Add(simbolos[2]);
+                        resultado.Add(simbolos[4]);
+                        break;
+                }
+            }
+            if (longitud == 2 && i == 1)
+            {
+                switch (numeroString[i])
+                {
+                    case '1':
+                        resultado.Add(simbolos[0]);
+                        break;
+                    case '2':
+                        resultado.Add(simbolos[0]);
+                        resultado.Add(simbolos[0]);
+                        break;
+                    case '3':
+                        resultado.Add(simbolos[0]);
+                        resultado.Add(simbolos[0]);
+                        resultado.Add(simbolos[0]);
+                        break;
+                    case '4':
+                        resultado.Add(simbolos[0]);
+                        resultado.Add(simbolos[1]);
+                        break;
+                    case '5':
+                        resultado.Add(simbolos[1]);
+                        break;
+                    case '6':
+                        resultado.Add(simbolos[1]);
+                        resultado.Add(simbolos[0]);
+                        break;
+                    case '7':
+                        resultado.Add(simbolos[1]);
+                        resultado.Add(simbolos[0]);
+                        resultado.Add(simbolos[0]);
+                        break;
+                    case '8':
+                        resultado.Add(simbolos[1]);
+                        resultado.Add(simbolos[0]);
+                        resultado.Add(simbolos[0]);
+                        resultado.Add(simbolos[0]);
+                        break;
+                    case '9':
+                        resultado.Add(simbolos[0]);
+                        resultado.Add(simbolos[2]);
+                        break;
+                }
+            }
+            if (longitud == 1)
+            {
+                switch (numeroString[i])
+                {
+                    case '1':
+                        resultado.Add(simbolos[0]);
+                        break;
+                    case '2':
+                        resultado.Add(simbolos[0]);
+                        resultado.Add(simbolos[0]);
+                        break;
+                    case '3':
+                        resultado.Add(simbolos[0]);
+                        resultado.Add(simbolos[0]);
+                        resultado.Add(simbolos[0]);
+                        break;
+                    case '4':
+                        resultado.Add(simbolos[0]);
+                        resultado.Add(simbolos[1]);
+                        break;
+                    case '5':
+                        resultado.Add(simbolos[1]);
+                        break;
+                    case '6':
+                        resultado.Add(simbolos[1]);
+                        resultado.Add(simbolos[0]);
+                        break;
+                    case '7':
+                        resultado.Add(simbolos[1]);
+                        resultado.Add(simbolos[0]);
+                        resultado.Add(simbolos[0]);
+                        break;
+                    case '8':
+                        resultado.Add(simbolos[1]);
+                        resultado.Add(simbolos[0]);
+                        resultado.Add(simbolos[0]);
+                        resultado.Add(simbolos[0]);
+                        break;
+                    case '9':
+                        resultado.Add(simbolos[0]);
+                        resultado.Add(simbolos[2]);
+                        break;
+                }
+            }
+
+        }
+
     }
+    else
+    {
+        Console.WriteLine("Por el momento, el numero es muy grande,vuelva a intentarlo mas tarde");
+    }
+    foreach (char simbolo in resultado)
+    {
+        Console.Write(simbolo);
+    }
+
 }
