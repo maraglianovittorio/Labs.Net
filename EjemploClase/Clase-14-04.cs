@@ -231,7 +231,12 @@ void QueMesEs(string mes)
 }*/
 
 // 6-Dado un número entero, que se convierta a número romano.
-ConvertirANumeroRomano(999);
+ConvertirANumeroRomano(444);
+
+void ConvertirUnidades(string numero)
+{
+
+}
 
 void ConvertirANumeroRomano(int numero)
 {
@@ -524,5 +529,6 @@ void ConvertirANumeroRomano(int numero)
     {
         Console.Write(simbolo);
     }
+    Console.ReadKey();
 
 }
